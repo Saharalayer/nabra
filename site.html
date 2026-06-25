@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Nabra Cosmetiques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- خطوط حديثة -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- أيقونات رسمية -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {font-family:'Poppins','Cairo',sans-serif; margin:0; background:#0d1b3d; color:#fff;}
+    header {background:#1c2a4d; padding:20px; display:flex; justify-content:space-between; align-items:center;}
+    header img {width:120px;}
+    nav ul {list-style:none; display:flex; gap:20px; margin:0; padding:0;}
+    nav a {color:#d4af37; text-decoration:none; font-weight:bold;}
+    nav a:hover {color:#fff;}
+    .hero {text-align:center; padding:60px 20px;}
+    .hero h1 {color:#d4af37; font-size:2.5em;}
+    .hero p {margin:15px 0; font-size:1.2em;}
+    .hero button {margin:10px; padding:12px 20px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;}
+    .btn-gold {background:#d4af37; color:#0d1b3d;}
+    .btn-dark {background:#0d1b3d; color:#fff; border:1px solid #d4af37;}
+    .features {display:flex; justify-content:center; gap:30px; flex-wrap:wrap; padding:40px 20px;}
+    .feature {text-align:center; max-width:200px;}
+    .feature i {font-size:2em; color:#d4af37; margin-bottom:10px;}
+    .container {max-width:1200px; margin:auto; padding:40px 20px;}
+    h2 {text-align:center; color:#d4af37; margin-bottom:30px;}
+    .products {display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px;}
+    .product {background:#fff; color:#333; border-radius:12px; padding:20px; text-align:center; box-shadow:0 6px 12px rgba(0,0,0,0.15);}
+    .product img {width:100%; height:200px; object-fit:cover; border-radius:8px;}
+    .product h3 {color:#0d1b3d;}
+    .price {color:#d4af37; font-weight:bold;}
+    .product button {margin-top:10px; background:#d4af37; color:#0d1b3d; border:none; border-radius:8px; padding:10px; cursor:pointer;}
+    .product button:hover {background:#b7950b;}
+    /* أيقونة السلة */
+    .cart-icon {position:fixed; top:20px; right:20px; background:#d4af37; color:#0d1b3d; padding:12px; border-radius:50%; cursor:pointer; font-size:1.5em;}
+    /* نافذة السلة */
+    .cart-modal {display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; color:#333; padding:20px; border-radius:12px; width:90%; max-width:400px; box-shadow:0 8px 16px rgba(0,0,0,0.3);}
+    .cart-modal h3 {margin-top:0; color:#0d1b3d;}
+    .cart-modal ul {list-style:none; padding:0;}
+    .cart-modal li {margin:8px 0;}
+    .cart-modal button {margin-top:10px; width:100%;}
+    .close-btn {background:#e74c3c; color:#fff; border:none; padding:6px 10px; border-radius:5px; cursor:pointer; float:right;}
+    footer {background:#1c2a4d; text-align:center; padding:30px 20px; margin-top:40px;}
+    .social-links {display:flex; justify-content:center; gap:20px;}
+    .social-links a {color:#d4af37; font-size:1.5em;}
+    .social-links a:hover {color:#fff;}
+  </style>
+</head>
+<body>
+  <!-- الهيدر -->
+  <header>
+    <img src="logo.jpeg" alt="Nabra Cosmetiques Logo">
+    <nav>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#features">المميزات</a></li>
+        <li><a href="#reviews">آراء العملاء</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- القسم الرئيسي -->
+  <section class="hero">
+    <h1>جمالك يبدأ من هنا</h1>
+    <p>منتجات تجميل وعناية مختارة بعناية لتمنحك إطلالة مميزة وثقة أكبر.</p>
+    <button class="btn-gold">اكتشف المنتجات</button>
+    <button class="btn-dark">اطلب الآن</button>
+  </section>
+
+  <!-- المميزات -->
+  <section id="features" class="features">
+    <div class="feature"><i class="fas fa-tags"></i><p>أسعار تنافسية</p></div>
+    <div class="feature"><i class="fas fa-headset"></i><p>خدمة عملاء متميزة</p></div>
+    <div class="feature"><i class="fas fa-truck"></i><p>توصيل سريع</p></div>
+    <div class="feature"><i class="fas fa-certificate"></i><p>منتجات أصلية</p></div>
+  </section>
+
+  <!-- المنتجات -->
+  <div class="container" id="products">
+    <h2>منتجاتنا</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product1.jpeg" alt="منتج 1">
+        <h3>منتج 1</h3>
+        <p class="price">150 درهم</p>
+        <button onclick="addToCart('منتج 1',150)">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <img src="product2.jpeg" alt="منتج 2">
+        <h3>منتج 2</h3>
+        <p class="price">170 درهم</p>
+        <button onclick="addToCart('منتج 2',170)">أضف إلى السلة</button>
+      </div>
+      <!-- كرري نفس البنية لبقية المنتجات -->
+    </div>
+  </div>
+
+  <!-- أيقونة السلة -->
+  <div class="cart-icon" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i></div>
+
+  <!-- نافذة السلة -->
+  <div class="cart-modal" id="cartModal">
+    <button class="close-btn" onclick="toggleCart()">إغلاق</button>
+    <h3>سلة المشتريات</h3>
+    <ul id="cartItems"></ul>
+    <div id="cartTotal"></div>
+    <button onclick="sendCart()">تأكيد الطلب عبر واتساب</button>
+  </div>
+
+    <!-- الفوتر -->
+  <footer>
+    <p>تابعونا على وسائل التواصل:</p>
+    <div class="social-links">
+      <a href="https://www.snapchat.com/add/Nabra_Cosmetiques"><i class="fab fa-snapchat"></i></a>
+      <a href="https://www.instagram.com/Nabra_Cosmetiques"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/Nabra_Cosmetiques"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@Nabra_Cosmetiques"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>📞 +212 635-633060</p>
+    <p>© 2026 جميع الحقوق محفوظة Nabra Cosmetiques</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(product, price) {
+      const existing = cart.find(item => item.product === product);
+      if(existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({product, price: parseFloat(price), quantity: 1});
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      cartItems.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - ${item.price} درهم × ${item.quantity} = ${subtotal} درهم`;
+
+        // زر الحذف
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '❌';
+        removeBtn.style.marginLeft = '10px';
+        removeBtn.style.background = '#e74c3c';
+        removeBtn.style.color = '#fff';
+        removeBtn.style.border = 'none';
+        removeBtn.style.borderRadius = '5px';
+        removeBtn.style.cursor = 'pointer';
+        removeBtn.onclick = () => removeFromCart(index);
+
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+      });
+
+      cartTotal.textContent = `المجموع العام: ${total} درهم`;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function sendCart() {
+      if(cart.length === 0) {
+        alert('السلة فارغة');
+        return;
+      }
+      let message = 'مرحباً، أرغب في طلب المنتجات التالية:\n';
+      let total = 0;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        message += `- ${item.product} × ${item.quantity} = ${subtotal} درهم\n`;
+      });
+
+      message += `\nالمجموع العام: ${total} درهم`;
+
+      const url = `https://wa.me/212635633060?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cartModal');
+      modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
