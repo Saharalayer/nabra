@@ -4,131 +4,68 @@
   <meta charset="UTF-8">
   <title>Nabra Cosmetiques</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- خط حديث -->
+  <!-- خطوط حديثة -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <!-- أيقونات رسمية -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: 'Poppins', 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #0d1b3d, #1c2a4d);
-      color: #fff;
-      margin: 0;
-      padding: 0;
+      font-family: 'Poppins','Cairo',sans-serif;
+      background: linear-gradient(135deg,#0d1b3d,#1c2a4d);
+      color:#fff; margin:0; padding:0;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header img {
-      width: 160px;
-      margin-bottom: 15px;
-    }
-    header h1 {
-      color: #d4af37;
-      margin: 0;
-      font-size: 2.2em;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    h2 {
-      text-align: center;
-      color: #d4af37;
-      margin-bottom: 30px;
-      font-size: 1.8em;
-    }
+    header { text-align:center; padding:30px 20px; }
+    header img { width:150px; margin-bottom:10px; }
+    header h1 { color:#d4af37; margin:0; font-size:2em; }
+    header p { margin-top:8px; font-size:1.1em; }
+    .container { max-width:1200px; margin:auto; padding:20px; }
+    h2 { text-align:center; color:#d4af37; margin-bottom:25px; }
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
     }
     .product {
-      background: #fff;
-      color: #333;
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background:#fff; color:#333; border-radius:12px; padding:15px;
+      text-align:center; box-shadow:0 6px 12px rgba(0,0,0,0.15);
+      transition:transform 0.3s ease;
     }
-    .product:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.25);
-    }
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    .product h3 {
-      color: #0d1b3d;
-      margin: 12px 0;
-      font-weight: 600;
-    }
-    .price {
-      color: #d4af37;
-      font-weight: bold;
-      margin: 10px 0;
-      font-size: 1.1em;
-    }
+    .product:hover { transform:translateY(-5px); }
+    .product img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
+    .product h3 { color:#0d1b3d; margin:10px 0; }
+    .price { color:#d4af37; font-weight:bold; margin:8px 0; }
     button {
-      background: #d4af37;
-      color: #0d1b3d;
-      font-weight: bold;
-      padding: 12px 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      background:#d4af37; color:#0d1b3d; font-weight:bold;
+      padding:10px 14px; border:none; border-radius:8px; cursor:pointer;
+      transition:background 0.3s ease;
     }
-    button:hover {
-      background: #b7950b;
+    button:hover { background:#b7950b; }
+    /* سلة المشتريات */
+    .cart {
+      position:fixed; bottom:20px; left:20px;
+      background:#fff; color:#333; padding:15px;
+      border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.2);
+      max-width:300px; font-size:0.9em;
     }
-    footer {
-      background: #0d1b3d;
-      text-align: center;
-      padding: 30px 15px;
-      margin-top: 50px;
-    }
-    footer p {
-      margin-bottom: 15px;
-      font-size: 1.1em;
-      color: #fff;
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .social-links a {
-      color: #d4af37;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: #fff;
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.6em; }
-      h2 { font-size: 1.4em; }
-      .product img { height: 180px; }
+    .cart h3 { margin:0 0 10px; color:#0d1b3d; }
+    .cart ul { list-style:none; padding:0; margin:0 0 10px; }
+    .cart ul li { margin:5px 0; }
+    .cart button { width:100%; }
+    footer { background:#0d1b3d; text-align:center; padding:25px 15px; margin-top:40px; }
+    footer p { margin-bottom:12px; }
+    .social-links { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+    .social-links a { color:#d4af37; font-size:1.4em; transition:color 0.3s ease; }
+    .social-links a:hover { color:#fff; }
+    @media(max-width:600px){
+      header h1{font-size:1.5em;}
+      .product img{height:160px;}
+      .cart{max-width:90%; left:5%; bottom:10px;}
     }
   </style>
 </head>
 <body>
   <!-- رأس الصفحة -->
   <header>
-    <img src="logo.png" alt="Nabra Cosmetiques Logo">
+    <img src="logo.jpeg" alt="Nabra Cosmetiques Logo">
     <h1>Nabra Cosmetiques</h1>
     <p>جمال طبيعي بلمسة فاخرة ✨</p>
   </header>
@@ -138,48 +75,55 @@
     <h2>منتجاتنا</h2>
     <div class="products">
       <div class="product">
-        <img src="1.jpeg" alt="ماسك النيلة الصحراوية الأصلية">
-        <h3>ماسك النيلة الصحراوية الأصلية</h3>
+        <img src="product1.jpeg" alt="منتج 1">
+        <h3>منتج 1</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">150 درهم</p>
-        <button onclick="sendOrder('ماسك النيلة الصحراوية الأصلية', '150')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 1', '150')">أضف إلى السلة</button>
       </div>
       <div class="product">
-        <img src="2.jpeg" alt="منتج 2">
+        <img src="product2.jpeg" alt="منتج 2">
         <h3>منتج 2</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">170 درهم</p>
-        <button onclick="sendOrder('منتج 2', '170')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 2', '170')">أضف إلى السلة</button>
       </div>
       <div class="product">
-        <img src="product3.jpg" alt="منتج 3">
+        <img src="product3.jpeg" alt="منتج 3">
         <h3>منتج 3</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">190 درهم</p>
-        <button onclick="sendOrder('منتج 3', '190')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 3', '190')">أضف إلى السلة</button>
       </div>
       <div class="product">
-        <img src="product4.jpg" alt="منتج 4">
+        <img src="product4.jpeg" alt="منتج 4">
         <h3>منتج 4</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">200 درهم</p>
-        <button onclick="sendOrder('منتج 4', '200')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 4', '200')">أضف إلى السلة</button>
       </div>
       <div class="product">
-        <img src="product5.jpg" alt="منتج 5">
+        <img src="product5.jpeg" alt="منتج 5">
         <h3>منتج 5</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">220 درهم</p>
-        <button onclick="sendOrder('منتج 5', '220')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 5', '220')">أضف إلى السلة</button>
       </div>
       <div class="product">
-        <img src="product6.jpg" alt="منتج 6">
+        <img src="product6.jpeg" alt="منتج 6">
         <h3>منتج 6</h3>
         <p>وصف قصير للمنتج</p>
         <p class="price">230 درهم</p>
-        <button onclick="sendOrder('منتج 6', '230')">اطلب الآن</button>
+        <button onclick="addToCart('منتج 6', '230')">أضف إلى السلة</button>
       </div>
     </div>
+  </div>
+
+  <!-- السلة -->
+  <div class="cart" id="cart">
+    <h3>سلة المشتريات</h3>
+    <ul id="cartItems"></ul>
+    <button onclick="sendCart()">إرسال الطلب عبر واتساب</button>
   </div>
 
   <!-- الفوتر -->
@@ -194,11 +138,26 @@
   </footer>
 
   <script>
-    function sendOrder(product, price) {
-      const message = `مرحباً، أرغب في طلب ${product} بسعر ${price} درهم.`;
-      const url = `https://wa.me/212635633060?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
+    let cart = [];
+
+    function addToCart(product, price) {
+      cart.push({product, price});
+      renderCart();
     }
-  </script>
-</body>
-</html>
+
+    function renderCart() {
+      const cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - ${item.price} درهم`;
+        cartItems.appendChild(li);
+      });
+    }
+
+    function sendCart() {
+      if(cart.length === 0) {
+        alert('السلة فارغة');
+        return;
+      }
+      let message = 'مرحباً، أرغب في طلب المنتجات التالية
