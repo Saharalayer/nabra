@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Nabra Cosmetiques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- مهم للتجاوب -->
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #0d1b3d, #1c2a4d); /* الأزرق الداكن */
+      background: linear-gradient(135deg, #0d1b3d, #1c2a4d);
       color: #fff;
       margin: 0;
       padding: 0;
     }
     header {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
     header img {
-      width: 150px;
+      width: 160px;
       margin-bottom: 15px;
     }
     header h1 {
-      color: #d4af37; /* الذهبي */
+      color: #d4af37;
       margin: 0;
+      font-size: 2em;
     }
     header p {
       margin-top: 10px;
@@ -36,6 +38,7 @@
       text-align: center;
       color: #d4af37;
       margin-bottom: 30px;
+      font-size: 1.8em;
     }
     .products {
       display: grid;
@@ -48,7 +51,11 @@
       border-radius: 12px;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
     }
     .product img {
       width: 100%;
@@ -58,20 +65,23 @@
     }
     .product h3 {
       color: #0d1b3d;
+      margin: 10px 0;
     }
     .price {
       color: #d4af37;
       font-weight: bold;
       margin: 10px 0;
+      font-size: 1.1em;
     }
     button {
       background: #d4af37;
       color: #0d1b3d;
       font-weight: bold;
-      padding: 10px;
+      padding: 10px 15px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
     button:hover {
       background: #b7950b;
@@ -79,17 +89,36 @@
     footer {
       background: #0d1b3d;
       text-align: center;
-      padding: 20px;
+      padding: 25px 15px;
       margin-top: 40px;
     }
-    footer a {
-      color: #d4af37;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
+    footer p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      color: #fff;
     }
-    footer a:hover {
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .social-links a:hover {
       text-decoration: underline;
+    }
+    /* تجاوب الهاتف */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5em; }
+      h2 { font-size: 1.4em; }
+      .product img { height: 160px; }
     }
   </style>
 </head>
@@ -153,10 +182,12 @@
   <!-- الفوتر -->
   <footer>
     <p>تابعونا على وسائل التواصل:</p>
-    <a href="https://www.snapchat.com/add/Nabra_Cosmetiques">Snapchat</a>
-    <a href="https://www.instagram.com/Nabra_Cosmetiques">Instagram</a>
-    <a href="https://www.facebook.com/Nabra_Cosmetiques">Facebook</a>
-    <a href="https://www.tiktok.com/@Nabra_Cosmetiques">TikTok</a>
+    <div class="social-links">
+      <a href="https://www.snapchat.com/add/Nabra_Cosmetiques">📸 Snapchat</a>
+      <a href="https://www.instagram.com/Nabra_Cosmetiques">📷 Instagram</a>
+      <a href="https://www.facebook.com/Nabra_Cosmetiques">📘 Facebook</a>
+      <a href="https://www.tiktok.com/@Nabra_Cosmetiques">🎵 TikTok</a>
+    </div>
   </footer>
 
   <script>
