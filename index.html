@@ -6,43 +6,56 @@
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #0d1b3d, #1c2a4d); /* الأزرق الداكن من الشعار */
+      background: linear-gradient(135deg, #0d1b3d, #1c2a4d); /* الأزرق الداكن */
       color: #fff;
-      text-align: center;
       margin: 0;
       padding: 0;
     }
     .container {
-      max-width: 500px;
+      max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
-    .logo {
-      width: 150px;
-      margin-bottom: 20px;
+    h1 {
+      text-align: center;
+      color: #d4af37; /* الذهبي */
+      margin-bottom: 30px;
     }
-    h2 {
-      color: #d4af37; /* الذهبي من الشعار */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    form {
+    .product {
       background: #fff;
       color: #333;
-      padding: 20px;
       border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    input, select, button {
+    .product img {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      height: 200px;
+      object-fit: cover;
       border-radius: 8px;
-      border: 1px solid #ccc;
+    }
+    .product h3 {
+      color: #0d1b3d;
+    }
+    .price {
+      color: #d4af37;
+      font-weight: bold;
+      margin: 10px 0;
     }
     button {
       background: #d4af37;
       color: #0d1b3d;
       font-weight: bold;
-      cursor: pointer;
+      padding: 10px;
       border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
     button:hover {
       background: #b7950b;
@@ -51,29 +64,62 @@
 </head>
 <body>
   <div class="container">
-    <img src="logo.png" alt="Nabra Cosmetiques Logo" class="logo">
-    <h2>اطلب منتجاتك الآن</h2>
-    <form id="orderForm">
-      <input type="text" id="name" placeholder="الاسم الكامل" required>
-      <input type="text" id="phone" placeholder="رقم الهاتف" required>
-      <input type="text" id="address" placeholder="العنوان" required>
-      <select id="product">
-        <option value="كريم تفتيح">كريم تفتيح</option>
-        <option value="زيت طبيعي">زيت طبيعي</option>
-        <option value="ماسك">ماسك</option>
-      </select>
-      <button type="button" onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
-    </form>
+    <h1>منتجات Nabra Cosmetiques</h1>
+    <div class="products">
+      <!-- المنتج 1 -->
+      <div class="product">
+        <img src="product1.jpg" alt="منتج 1">
+        <h3>منتج 1</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">150 درهم</p>
+        <button onclick="sendOrder('منتج 1', '150')">اطلب الآن</button>
+      </div>
+      <!-- المنتج 2 -->
+      <div class="product">
+        <img src="product2.jpg" alt="منتج 2">
+        <h3>منتج 2</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">170 درهم</p>
+        <button onclick="sendOrder('منتج 2', '170')">اطلب الآن</button>
+      </div>
+      <!-- المنتج 3 -->
+      <div class="product">
+        <img src="product3.jpg" alt="منتج 3">
+        <h3>منتج 3</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">190 درهم</p>
+        <button onclick="sendOrder('منتج 3', '190')">اطلب الآن</button>
+      </div>
+      <!-- المنتج 4 -->
+      <div class="product">
+        <img src="product4.jpg" alt="منتج 4">
+        <h3>منتج 4</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">200 درهم</p>
+        <button onclick="sendOrder('منتج 4', '200')">اطلب الآن</button>
+      </div>
+      <!-- المنتج 5 -->
+      <div class="product">
+        <img src="product5.jpg" alt="منتج 5">
+        <h3>منتج 5</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">220 درهم</p>
+        <button onclick="sendOrder('منتج 5', '220')">اطلب الآن</button>
+      </div>
+      <!-- المنتج 6 -->
+      <div class="product">
+        <img src="product6.jpg" alt="منتج 6">
+        <h3>منتج 6</h3>
+        <p>وصف قصير للمنتج</p>
+        <p class="price">230 درهم</p>
+        <button onclick="sendOrder('منتج 6', '230')">اطلب الآن</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    function sendOrder() {
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const address = document.getElementById('address').value;
-      const product = document.getElementById('product').value;
-
-      const message = `مرحباً، اسمي ${name}.\nرقمي: ${phone}\nالعنوان: ${address}\nأرغب في طلب: ${product}`;
+    function sendOrder(product, price) {
+      const message = `مرحباً، أرغب في طلب ${product} بسعر ${price} درهم.`;
       const url = `https://wa.me/212635633060?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
     }
