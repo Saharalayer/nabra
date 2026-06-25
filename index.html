@@ -11,14 +11,30 @@
       margin: 0;
       padding: 0;
     }
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      color: #d4af37; /* الذهبي */
+      margin: 0;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
-    h1 {
+    h2 {
       text-align: center;
-      color: #d4af37; /* الذهبي */
+      color: #d4af37;
       margin-bottom: 30px;
     }
     .products {
@@ -60,13 +76,35 @@
     button:hover {
       background: #b7950b;
     }
+    footer {
+      background: #0d1b3d;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #d4af37;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <!-- رأس الصفحة -->
+  <header>
+    <img src="logo.png" alt="Nabra Cosmetiques Logo">
+    <h1>Nabra Cosmetiques</h1>
+    <p>جمال طبيعي بلمسة فاخرة ✨</p>
+  </header>
+
+  <!-- المنتجات -->
   <div class="container">
-    <h1>منتجات Nabra Cosmetiques</h1>
+    <h2>منتجاتنا</h2>
     <div class="products">
-      <!-- المنتج 1 -->
       <div class="product">
         <img src="product1.jpg" alt="منتج 1">
         <h3>منتج 1</h3>
@@ -74,7 +112,6 @@
         <p class="price">150 درهم</p>
         <button onclick="sendOrder('منتج 1', '150')">اطلب الآن</button>
       </div>
-      <!-- المنتج 2 -->
       <div class="product">
         <img src="product2.jpg" alt="منتج 2">
         <h3>منتج 2</h3>
@@ -82,7 +119,6 @@
         <p class="price">170 درهم</p>
         <button onclick="sendOrder('منتج 2', '170')">اطلب الآن</button>
       </div>
-      <!-- المنتج 3 -->
       <div class="product">
         <img src="product3.jpg" alt="منتج 3">
         <h3>منتج 3</h3>
@@ -90,7 +126,6 @@
         <p class="price">190 درهم</p>
         <button onclick="sendOrder('منتج 3', '190')">اطلب الآن</button>
       </div>
-      <!-- المنتج 4 -->
       <div class="product">
         <img src="product4.jpg" alt="منتج 4">
         <h3>منتج 4</h3>
@@ -98,7 +133,6 @@
         <p class="price">200 درهم</p>
         <button onclick="sendOrder('منتج 4', '200')">اطلب الآن</button>
       </div>
-      <!-- المنتج 5 -->
       <div class="product">
         <img src="product5.jpg" alt="منتج 5">
         <h3>منتج 5</h3>
@@ -106,7 +140,6 @@
         <p class="price">220 درهم</p>
         <button onclick="sendOrder('منتج 5', '220')">اطلب الآن</button>
       </div>
-      <!-- المنتج 6 -->
       <div class="product">
         <img src="product6.jpg" alt="منتج 6">
         <h3>منتج 6</h3>
@@ -116,6 +149,15 @@
       </div>
     </div>
   </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <p>تابعونا على وسائل التواصل:</p>
+    <a href="https://www.snapchat.com/add/Nabra_Cosmetiques">Snapchat</a>
+    <a href="https://www.instagram.com/Nabra_Cosmetiques">Instagram</a>
+    <a href="https://www.facebook.com/Nabra_Cosmetiques">Facebook</a>
+    <a href="https://www.tiktok.com/@Nabra_Cosmetiques">TikTok</a>
+  </footer>
 
   <script>
     function sendOrder(product, price) {
