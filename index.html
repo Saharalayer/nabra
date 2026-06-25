@@ -138,26 +138,33 @@
   </footer>
 
   <script>
-    let cart = [];
+  let cart = [];
 
-    function addToCart(product, price) {
-      cart.push({product, price});
-      renderCart();
+  function addToCart(product, price) {
+    cart.push({product, price});
+    renderCart();
+  }
+
+  function renderCart() {
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.textContent = `${item.product} - ${item.price} درهم`;
+      cartItems.appendChild(li);
+    });
+  }
+
+  function sendCart() {
+    if(cart.length === 0) {
+      alert('السلة فارغة');
+      return;
     }
-
-    function renderCart() {
-      const cartItems = document.getElementById('cartItems');
-      cartItems.innerHTML = '';
-      cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.product} - ${item.price} درهم`;
-        cartItems.appendChild(li);
-      });
-    }
-
-    function sendCart() {
-      if(cart.length === 0) {
-        alert('السلة فارغة');
-        return;
-      }
-      let message = 'مرحباً، أرغب في طلب المنتجات التالية
+    let message = 'مرحباً، أرغب في طلب المنتجات التالية:\n';
+    cart.forEach(item => {
+      message += `- ${item.product} بسعر ${item.price} درهم\n`;
+    });
+    const url = `https://wa.me/212635633060?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
