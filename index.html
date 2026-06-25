@@ -137,7 +137,7 @@
     </div>
   </footer>
 
-  <script>
+<script>
   let cart = [];
 
   function addToCart(product, price) {
@@ -151,8 +151,26 @@
     cart.forEach((item, index) => {
       const li = document.createElement('li');
       li.textContent = `${item.product} - ${item.price} درهم`;
+
+      // زر الحذف
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = '❌';
+      removeBtn.style.marginLeft = '10px';
+      removeBtn.style.background = '#e74c3c';
+      removeBtn.style.color = '#fff';
+      removeBtn.style.border = 'none';
+      removeBtn.style.borderRadius = '5px';
+      removeBtn.style.cursor = 'pointer';
+      removeBtn.onclick = () => removeFromCart(index);
+
+      li.appendChild(removeBtn);
       cartItems.appendChild(li);
     });
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1); // حذف المنتج من المصفوفة
+    renderCart(); // إعادة عرض السلة
   }
 
   function sendCart() {
@@ -168,3 +186,4 @@
     window.open(url, '_blank');
   }
 </script>
+
