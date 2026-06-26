@@ -2,16 +2,15 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nabra Cosmetiques | منتجات التجميل الأصلية</title>
+    <title>Nabra Cosmetiques | Premium Beauty Store</title>
 
     <meta name="description"
-        content="Nabra Cosmetiques متجر متخصص في مستحضرات التجميل والعناية بالبشرة مع إمكانية الطلب المباشر عبر واتساب.">
-
-    <meta name="keywords"
-        content="Nabra Cosmetiques, Cosmetics, Beauty, Maroc, منتجات تجميل">
+        content="متجر Nabra Cosmetiques لمنتجات العناية بالبشرة والتجميل مع الطلب المباشر عبر واتساب">
 
     <link rel="stylesheet" href="style.css">
 
@@ -19,29 +18,35 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<!--========================
-HEADER
-=========================-->
+<!-- Loader -->
+
+<div id="loader">
+
+    <div class="spinner"></div>
+
+</div>
+
+<!-- HEADER -->
 
 <header>
 
-    <div class="container nav-container">
+    <div class="container nav">
 
-        <a href="#" class="logo">
+        <div class="logo">
 
-            <img src="images/logo.png" alt="Nabra Cosmetiques">
+            <img src="images/logo.png" alt="Nabra">
 
-        </a>
+        </div>
 
         <nav>
 
@@ -51,19 +56,19 @@ HEADER
 
             <a href="#about">من نحن</a>
 
-            <a href="#reviews">آراء العملاء</a>
+            <a href="#reviews">الآراء</a>
 
             <a href="#contact">اتصل بنا</a>
 
         </nav>
 
-        <div class="nav-icons">
+        <div class="header-icons">
 
-            <button id="cartBtn" class="cart-button">
+            <button id="cartButton">
 
                 <i class="fa-solid fa-cart-shopping"></i>
 
-                <span id="cart-count">0</span>
+                <span id="cartCounter">0</span>
 
             </button>
 
@@ -73,19 +78,17 @@ HEADER
 
 </header>
 
-<!--========================
-HERO
-=========================-->
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="container hero-content">
+    <div class="container hero-grid">
 
         <div class="hero-text">
 
-            <span class="tag">
+            <span class="badge">
 
-                ✨ منتجات أصلية 100%
+                منتجات أصلية 100%
 
             </span>
 
@@ -93,14 +96,17 @@ HERO
 
                 اكتشفي جمالك مع
 
-                <span>Nabra Cosmetiques</span>
+                <span>
+
+                    Nabra Cosmetiques
+
+                </span>
 
             </h1>
 
             <p>
 
-                منتجات العناية بالبشرة والتجميل المختارة بعناية
-                لتمنحك أفضل النتائج بأفضل الأسعار.
+                متجر متخصص في مستحضرات التجميل والعناية بالبشرة.
 
             </p>
 
@@ -112,39 +118,11 @@ HERO
 
                 </a>
 
-                <a href="#about" class="btn outline">
+                <a href="#about" class="btn white">
 
-                    اكتشف المزيد
+                    تعرف علينا
 
                 </a>
-
-            </div>
-
-            <div class="hero-stats">
-
-                <div>
-
-                    <h3>500+</h3>
-
-                    <span>عميل سعيد</span>
-
-                </div>
-
-                <div>
-
-                    <h3>6</h3>
-
-                    <span>منتجات مميزة</span>
-
-                </div>
-
-                <div>
-
-                    <h3>24/7</h3>
-
-                    <span>دعم العملاء</span>
-
-                </div>
 
             </div>
 
@@ -152,7 +130,7 @@ HERO
 
         <div class="hero-image">
 
-            <img src="images/hero.png" alt="Beauty Products">
+            <img src="images/hero.png">
 
         </div>
 
@@ -160,51 +138,41 @@ HERO
 
 </section>
 
-<!--========================
-FEATURES
-=========================-->
+<!-- FEATURES -->
 
 <section class="features">
 
-    <div class="container">
+    <div class="container features-grid">
 
-        <div class="feature">
-
-            <i class="fa-solid fa-shield-heart"></i>
-
-            <h3>منتجات أصلية</h3>
-
-            <p>جميع المنتجات أصلية وعالية الجودة.</p>
-
-        </div>
-
-        <div class="feature">
+        <div>
 
             <i class="fa-solid fa-truck-fast"></i>
 
             <h3>توصيل سريع</h3>
 
-            <p>التوصيل لجميع مدن المغرب.</p>
+        </div>
+
+        <div>
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <h3>منتجات أصلية</h3>
 
         </div>
 
-        <div class="feature">
+        <div>
 
-            <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-money-bill-wave"></i>
 
             <h3>الدفع عند الاستلام</h3>
 
-            <p>اطلب الآن وادفع عند التوصل.</p>
-
         </div>
 
-        <div class="feature">
+        <div>
 
             <i class="fa-solid fa-headset"></i>
 
-            <h3>دعم متواصل</h3>
-
-            <p>نحن هنا للإجابة عن جميع استفساراتك.</p>
+            <h3>دعم 24/7</h3>
 
         </div>
 
@@ -212,31 +180,29 @@ FEATURES
 
 </section>
 
-<!--========================
-PRODUCTS
-=========================-->
+<!-- PRODUCTS -->
 
-<section id="products" class="products">
+<section id="products">
 
     <div class="container">
 
         <div class="section-title">
 
-            <span>أفضل المنتجات</span>
+            <span>
 
-            <h2>منتجاتنا</h2>
+                منتجاتنا
 
-            <p>
+            </span>
 
-                اختر المنتج الذي يناسبك ثم أضفه إلى السلة.
+            <h2>
 
-            </p>
+                أحدث المنتجات
+
+            </h2>
 
         </div>
 
         <div id="productsContainer" class="products-grid">
-
-            <!-- سيتم إنشاء المنتجات تلقائياً بواسطة JavaScript -->
 
         </div>
 
@@ -244,11 +210,9 @@ PRODUCTS
 
 </section>
 
-<!--========================
-CART SIDEBAR
-=========================-->
+<!-- CART -->
 
-<div id="cartSidebar" class="cart-sidebar">
+<div id="cart" class="cart">
 
     <div class="cart-header">
 
@@ -260,237 +224,125 @@ CART SIDEBAR
 
         <button id="closeCart">
 
-            <i class="fa-solid fa-xmark"></i>
+            ✕
 
         </button>
 
     </div>
 
-    <div id="cartItems" class="cart-items">
+    <div id="cartItems">
 
     </div>
 
     <div class="cart-footer">
 
-        <div class="total">
+        <h3>
 
-            <span>
+            المجموع :
 
-                المجموع
-
-            </span>
-
-            <strong id="cartTotal">
+            <span id="totalPrice">
 
                 0 DH
 
-            </strong>
+            </span>
 
-        </div>
+        </h3>
 
-        <button id="checkoutBtn" class="checkout-btn">
+        <button id="checkoutButton">
 
             متابعة الطلب
 
         </button>
 
     </div>
-<!--========================
-CHECKOUT
-=========================-->
 
-<section id="checkout" class="checkout">
+</div>
 
-    <div class="container">
+<div id="overlay"></div>
 
-        <div class="section-title">
+<!-- CHECKOUT -->
 
-            <span>إتمام الطلب</span>
-
-            <h2>بيانات الزبون</h2>
-
-            <p>
-                أدخل معلوماتك وسيتم إرسال الطلب مباشرة عبر واتساب.
-            </p>
-
-        </div>
-
-        <form id="checkoutForm">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-
-                    <label>الاسم الكامل</label>
-
-                    <input
-                        type="text"
-                        id="customerName"
-                        placeholder="الاسم الكامل"
-                        required>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label>رقم الهاتف</label>
-
-                    <input
-                        type="tel"
-                        id="customerPhone"
-                        placeholder="06XXXXXXXX"
-                        required>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label>المدينة</label>
-
-                    <input
-                        type="text"
-                        id="customerCity"
-                        placeholder="المدينة"
-                        required>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label>العنوان</label>
-
-                    <input
-                        type="text"
-                        id="customerAddress"
-                        placeholder="العنوان الكامل"
-                        required>
-
-                </div>
-
-            </div>
-
-            <button
-                type="submit"
-                class="checkout-button">
-
-                <i class="fab fa-whatsapp"></i>
-
-                إرسال الطلب عبر واتساب
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!--========================
-ABOUT
-=========================-->
-
-<section id="about" class="about">
-
-    <div class="container about-grid">
-
-        <div>
-
-            <img
-                src="images/about.jpg"
-                alt="Nabra">
-
-        </div>
-
-        <div>
-
-            <span class="mini-title">
-
-                من نحن
-
-            </span>
-
-            <h2>
-
-                Nabra Cosmetiques
-
-            </h2>
-
-            <p>
-
-                متجر متخصص في مستحضرات التجميل والعناية بالبشرة.
-
-                نقدم منتجات مختارة بعناية
-                مع جودة عالية وأسعار مناسبة.
-
-            </p>
-
-            <ul>
-
-                <li>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    منتجات أصلية
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    توصيل سريع
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    الدفع عند الاستلام
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-check"></i>
-
-                    خدمة عملاء متميزة
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--========================
-REVIEWS
-=========================-->
-
-<section
-id="reviews"
-class="reviews">
+<section id="checkout">
 
 <div class="container">
 
-<div class="section-title">
-
-<span>
-
-آراء العملاء
-
-</span>
-
 <h2>
 
-ماذا يقول عملاؤنا
+بيانات الطلب
 
 </h2>
 
+<form id="checkoutForm">
+
+<input
+id="customerName"
+type="text"
+placeholder="الاسم الكامل"
+required>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="رقم الهاتف"
+required>
+
+<input
+id="customerCity"
+type="text"
+placeholder="المدينة"
+required>
+
+<input
+id="customerAddress"
+type="text"
+placeholder="العنوان"
+required>
+
+<button type="submit">
+
+إرسال الطلب عبر واتساب
+
+</button>
+
+</form>
+
 </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2>
+
+Nabra Cosmetiques
+
+</h2>
+
+<p>
+
+نوفر منتجات تجميل وعناية بالبشرة بجودة عالية مع خدمة توصيل لجميع أنحاء المغرب.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<div class="container">
+
+<h2>
+
+آراء العملاء
+
+</h2>
 
 <div class="reviews-grid">
 
@@ -500,15 +352,9 @@ class="reviews">
 
 <p>
 
-وصلني الطلب بسرعة والمنتج ممتاز.
+منتجات ممتازة.
 
 </p>
-
-<strong>
-
-سارة
-
-</strong>
 
 </div>
 
@@ -522,12 +368,6 @@ class="reviews">
 
 </p>
 
-<strong>
-
-فاطمة
-
-</strong>
-
 </div>
 
 <div class="review">
@@ -536,15 +376,9 @@ class="reviews">
 
 <p>
 
-سأطلب مرة أخرى بالتأكيد.
+توصيل سريع.
 
 </p>
-
-<strong>
-
-إيمان
-
-</strong>
 
 </div>
 
@@ -554,267 +388,43 @@ class="reviews">
 
 </section>
 
-<!--========================
-FAQ
-=========================-->
-
-<section class="faq">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-
-الأسئلة الشائعة
-
-</h2>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-
-هل الدفع عند الاستلام متوفر؟
-
-</h3>
-
-<p>
-
-نعم، يتوفر الدفع عند الاستلام في أغلب المدن المغربية.
-
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-
-كم مدة التوصيل؟
-
-</h3>
-
-<p>
-
-من 24 إلى 72 ساعة حسب المدينة.
-
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-
-هل المنتجات أصلية؟
-
-</h3>
-
-<p>
-
-جميع المنتجات أصلية ومضمونة.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!--========================
-NEWSLETTER
-=========================-->
-
-<section class="newsletter">
-
-<div class="container">
-
-<h2>
-
-احصل على أحدث العروض
-
-</h2>
-
-<p>
-
-اشترك ليصلك كل جديد.
-
-</p>
-
-<div class="newsletter-box">
-
-<input
-type="email"
-placeholder="البريد الإلكتروني">
-
-<button>
-
-اشتراك
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-</div>
-
-<div id="overlay" class="overlay"></div>
-<!--========================
-FOOTER
-=========================-->
+<!-- FOOTER -->
 
 <footer id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-grid">
+<img src="images/logo.png">
 
-            <div class="footer-box">
+<p>
 
-                <img src="images/logo.png" alt="Nabra Cosmetiques" class="footer-logo">
++212 635633060
 
-                <p>
+</p>
 
-                    منتجات تجميل وعناية بالبشرة بجودة عالية وأسعار مناسبة.
+<p>
 
-                </p>
+© 2026 Nabra Cosmetiques
 
-            </div>
+</p>
 
-            <div class="footer-box">
-
-                <h3>
-
-                    روابط سريعة
-
-                </h3>
-
-                <a href="#">الرئيسية</a>
-
-                <a href="#products">المنتجات</a>
-
-                <a href="#about">من نحن</a>
-
-                <a href="#reviews">آراء العملاء</a>
-
-            </div>
-
-            <div class="footer-box">
-
-                <h3>
-
-                    تواصل معنا
-
-                </h3>
-
-                <p>
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    +212 635633060
-
-                </p>
-
-                <p>
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    WhatsApp
-
-                </p>
-
-                <p>
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    المغرب
-
-                </p>
-
-            </div>
-
-            <div class="footer-box">
-
-                <h3>
-
-                    تابعنا
-
-                </h3>
-
-                <div class="social-icons">
-
-                    <a href="#">
-
-                        <i class="fab fa-facebook-f"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="fab fa-tiktok"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="fab fa-youtube"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="copyright">
-
-            © 2026 Nabra Cosmetiques | جميع الحقوق محفوظة
-
-        </div>
-
-    </div>
+</div>
 
 </footer>
-
-<!--========================
-FLOAT BUTTONS
-=========================-->
 
 <a
 
 href="https://wa.me/212635633060"
 
-target="_blank"
+class="whatsapp"
 
-class="whatsapp-btn">
+target="_blank">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
 
-<button
-
-id="scrollTop"
-
-class="scroll-top">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
+<script src="products.js"></script>
 
 <script src="script.js"></script>
 
