@@ -96,101 +96,126 @@ if (checkoutBtn) {
 
 }
 
-//=========================
-// إرسال الطلب
-//=========================
-
-const form = document.getElementById("checkoutForm");
-
-if (form) {
-
-    form.addEventListener("submit", sendOrder);
-
-}
-
 function sendOrder(e) {
 
     e.preventDefault();
 
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const phone =
-        document.getElementById("customerPhone").value.trim();
-
-    const city =
-        document.getElementById("customerCity").value.trim();
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const city = document.getElementById("customerCity").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
 
     if (!name || !phone || !city || !address) {
-
-        alert("يرجى ملء جميع البيانات");
-
+        alert("يرجى إدخال جميع البيانات");
         return;
-
     }
 
     if (cart.length === 0) {
-
-        alert("السلة فارغة");
-
+        alert("سلة المشتريات فارغة");
         return;
-
     }
 
-    let message =
+    // إنشاء رقم الطلب
+    const now = new Date();
 
-`🛍️ طلب جديد
+    const orderNumber =
+        "NC-" +
+        now.getFullYear().toString().slice(-2) +
+        String(now.getMonth() + 1).padStart(2, "0") +
+        String(now.getDate()).padStart(2, "0") +
+        "-" +
+        String(now.getHours()).padStart(2, "0") +
+        String(now.getMinutes()).padStart(2, "0") +
+        String(now.getSeconds()).padStart(2, "0");
 
-👤 الاسم : ${name}
-
-📞 الهاتف : ${phone}
-
-🏙️ المدينة : ${city}
-
-📍 العنوان : ${address}
-
-====================
-
-🛒 المنتجات
-
-`;
+    // تاريخ الطلب
+    const orderDate = now.toLocaleDateString("fr-MA");
+    const orderTime = now.toLocaleTimeString("fr-MA");
 
     let total = 0;
+    let totalItems = 0;
+
+    let message =
+`🛍️ *طلب جديد - Nabra Cosmetiques*
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+🧾 *رقم الطلب:* ${orderNumber}
+
+📅 *التاريخ:* ${orderDate}
+
+🕒 *الوقت:* ${orderTime}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+👤 *الاسم:* ${name}
+
+📞 *الهاتف:* ${phone}
+
+🏙️ *المدينة:* ${city}
+
+📍 *العنوان:* ${address}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+🛒 *تفاصيل الطلب*
+
+`;
 
     cart.forEach((item, index) => {
 
+        const subtotal = item.price * item.quantity;
+
+        total += subtotal;
+        totalItems += item.quantity;
+
         message +=
+`${index + 1}️⃣ ${item.name}
 
-`${index + 1}- ${item.name}
+📦 الكمية : ${item.quantity}
 
-الكمية : ${item.quantity}
+💵 سعر الوحدة : ${item.price} DH
 
-السعر : ${item.price} DH
+💰 المجموع : ${subtotal} DH
 
---------------------
+────────────────────
 
 `;
-
-        total += item.price * item.quantity;
 
     });
 
     message +=
+`📦 *عدد القطع:* ${totalItems}
 
-`💰 المجموع :
+💳 *إجمالي الطلب:* ${total} DH
 
-${total} DH
+━━━━━━━━━━━━━━━━━━━━━━
+
+🚚 طريقة التوصيل : التوصيل إلى المنزل
+
+💵 طريقة الدفع : الدفع عند الاستلام
+
+━━━━━━━━━━━━━━━━━━━━━━
 
 شكراً لاختياركم ❤️
-Nabra Cosmetiques`;
 
-    const url =
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+*Nabra Cosmetiques*`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
+
+    // تفريغ السلة
+    cart = [];
+    localStorage.removeItem("cart");
+
+    renderCart();
+
+    document.getElementById("checkoutForm").reset();
+
+    if (typeof showToast === "function") {
+        showToast("✅ تم إرسال الطلب بنجاح");
+    }
 
 }
 //======================================
