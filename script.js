@@ -9,7 +9,7 @@ const WHATSAPP_NUMBER = "212635633060";
 
 // عناصر الصفحة
 const cartBtn = document.getElementById("cartButton");
-const cart = document.getElementById("cart");
+const cartSidebar = document.getElementById("cart");
 const overlay = document.getElementById("overlay");
 const closeCart = document.getElementById("closeCart");
 const checkoutBtn = document.getElementById("checkoutButton");
@@ -43,7 +43,7 @@ if (cartBtn) {
 
     cartBtn.addEventListener("click", () => {
 
-        cart.classList.add("active");
+        cartSidebar.classList.add("active");
 
         overlay.classList.add("active");
 
@@ -69,7 +69,7 @@ if (overlay) {
 
 function closeSidebar() {
 
-    cart.classList.remove("active");
+    cartSidebar.classList.remove("active");
 
     overlay.classList.remove("active");
 
