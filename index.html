@@ -2,347 +2,517 @@
 <html lang="ar" dir="rtl">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabra Cosmetiques | منتجات التجميل الأصلية</title>
 
-<title>Nabra Cosmetiques | منتجات التجميل</title>
+    <meta name="description"
+        content="Nabra Cosmetiques متجر متخصص في مستحضرات التجميل والعناية بالبشرة مع إمكانية الطلب المباشر عبر واتساب.">
 
-<meta name="description"
-content="Nabra Cosmetiques منتجات تجميل وعناية أصلية مع إمكانية الطلب المباشر عبر الواتساب.">
+    <meta name="keywords"
+        content="Nabra Cosmetiques, Cosmetics, Beauty, Maroc, منتجات تجميل">
 
-<meta name="keywords"
-content="Nabra, Cosmetiques, Cosmetics, Beauty, Maroc">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
 
 </head>
 
 <body>
 
+<!--========================
+HEADER
+=========================-->
+
 <header>
 
-<div class="container">
+    <div class="container nav-container">
 
-<div class="logo">
+        <a href="#" class="logo">
 
-<img src="images/logo.png">
+            <img src="images/logo.png" alt="Nabra Cosmetiques">
 
-</div>
+        </a>
 
-<nav>
+        <nav>
 
-<a href="#">الرئيسية</a>
+            <a href="#">الرئيسية</a>
 
-<a href="#products">المنتجات</a>
+            <a href="#products">المنتجات</a>
 
-<a href="#about">من نحن</a>
+            <a href="#about">من نحن</a>
 
-<a href="#reviews">الآراء</a>
+            <a href="#reviews">آراء العملاء</a>
 
-<a href="#contact">تواصل معنا</a>
+            <a href="#contact">اتصل بنا</a>
 
-</nav>
+        </nav>
 
-</div>
+        <div class="nav-icons">
+
+            <button id="cartBtn" class="cart-button">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span id="cart-count">0</span>
+
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
+<!--========================
+HERO
+=========================-->
+
 <section class="hero">
 
-<div class="container hero-content">
+    <div class="container hero-content">
 
-<div class="hero-text">
+        <div class="hero-text">
 
-<h1>
+            <span class="tag">
 
-جمالك يبدأ من هنا
+                ✨ منتجات أصلية 100%
 
-</h1>
+            </span>
 
-<p>
+            <h1>
 
-منتجات تجميل وعناية مختارة بعناية لتمنحك أفضل النتائج.
+                اكتشفي جمالك مع
 
-</p>
+                <span>Nabra Cosmetiques</span>
 
-<div class="buttons">
+            </h1>
 
-<a href="#products" class="btn">
+            <p>
 
-اكتشف المنتجات
+                منتجات العناية بالبشرة والتجميل المختارة بعناية
+                لتمنحك أفضل النتائج بأفضل الأسعار.
 
-</a>
+            </p>
 
-<a href="#order" class="btn gold">
+            <div class="hero-buttons">
 
-اطلب الآن
+                <a href="#products" class="btn gold">
 
-</a>
+                    تسوق الآن
 
-</div>
+                </a>
 
-</div>
+                <a href="#about" class="btn outline">
 
-<div class="hero-image">
+                    اكتشف المزيد
 
-<img src="images/hero.png">
+                </a>
 
-</div>
+            </div>
 
-</div>
+            <div class="hero-stats">
+
+                <div>
+
+                    <h3>500+</h3>
+
+                    <span>عميل سعيد</span>
+
+                </div>
+
+                <div>
+
+                    <h3>6</h3>
+
+                    <span>منتجات مميزة</span>
+
+                </div>
+
+                <div>
+
+                    <h3>24/7</h3>
+
+                    <span>دعم العملاء</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="images/hero.png" alt="Beauty Products">
+
+        </div>
+
+    </div>
 
 </section>
+
+<!--========================
+FEATURES
+=========================-->
 
 <section class="features">
 
-<div class="container">
+    <div class="container">
 
-<div class="feature">
+        <div class="feature">
 
-<i class="fa-solid fa-shield-heart"></i>
+            <i class="fa-solid fa-shield-heart"></i>
 
-<h3>منتجات أصلية</h3>
+            <h3>منتجات أصلية</h3>
 
-</div>
+            <p>جميع المنتجات أصلية وعالية الجودة.</p>
 
-<div class="feature">
+        </div>
 
-<i class="fa-solid fa-truck-fast"></i>
+        <div class="feature">
 
-<h3>توصيل سريع</h3>
+            <i class="fa-solid fa-truck-fast"></i>
 
-</div>
+            <h3>توصيل سريع</h3>
 
-<div class="feature">
+            <p>التوصيل لجميع مدن المغرب.</p>
 
-<i class="fa-solid fa-headset"></i>
+        </div>
 
-<h3>دعم متواصل</h3>
+        <div class="feature">
 
-</div>
+            <i class="fa-solid fa-credit-card"></i>
 
-<div class="feature">
+            <h3>الدفع عند الاستلام</h3>
 
-<i class="fa-solid fa-tag"></i>
+            <p>اطلب الآن وادفع عند التوصل.</p>
 
-<h3>أفضل الأسعار</h3>
+        </div>
 
-</div>
+        <div class="feature">
 
-</div>
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>دعم متواصل</h3>
+
+            <p>نحن هنا للإجابة عن جميع استفساراتك.</p>
+
+        </div>
+
+    </div>
 
 </section>
+
+<!--========================
+PRODUCTS
+=========================-->
 
 <section id="products" class="products">
 
-<h2>
+    <div class="container">
 
-منتجاتنا
+        <div class="section-title">
 
-</h2>
+            <span>أفضل المنتجات</span>
 
-<div class="products-grid">
+            <h2>منتجاتنا</h2>
 
-<!-- Product 1 -->
+            <p>
 
-<div class="card">
+                اختر المنتج الذي يناسبك ثم أضفه إلى السلة.
 
-<img src="images/product1.jpg">
+            </p>
 
-<h3>اسم المنتج</h3>
+        </div>
 
-<p>199 DH</p>
+        <div id="productsContainer" class="products-grid">
 
-<button onclick="orderProduct('اسم المنتج')">
+            <!-- سيتم إنشاء المنتجات تلقائياً بواسطة JavaScript -->
 
-اطلب الآن
+        </div>
 
-</button>
-
-</div>
-
-<!-- Product 2 -->
-
-<div class="card">
-
-<img src="images/product2.jpg">
-
-<h3>اسم المنتج</h3>
-
-<p>199 DH</p>
-
-<button onclick="orderProduct('اسم المنتج')">
-
-اطلب الآن
-
-</button>
-
-</div>
-
-<!-- Product 3 -->
-
-<div class="card">
-
-<img src="images/product3.jpg">
-
-<h3>اسم المنتج</h3>
-
-<p>199 DH</p>
-
-<button onclick="orderProduct('اسم المنتج')">
-
-اطلب الآن
-
-</button>
-
-</div>
-
-<!-- Product 4 -->
-
-<div class="card">
-
-<img src="images/product4.jpg">
-
-<h3>اسم المنتج</h3>
-
-<p>199 DH</p>
-
-<button onclick="orderProduct('اسم المنتج')">
-
-اطلب الآن
-
-</button>
-
-</div>
-
-<!-- Product 5 -->
-
-<div class="card">
-
-<img src="images/product5.jpg">
-
-<h3>اسم المنتج</h3>
-
-<p>199 DH</p>
-
-<button onclick="orderProduct('اسم المنتج')">
-
-اطلب الآن
-
-</button>
-
-</div>
-
-<!-- Product 6 -->
-
-<div class="card">
-
-<img src="images/product6.jpg">
-
-<h3>اسم المنتج</h3>
-
-<p>199 DH</p>
-
-<button onclick="orderProduct('اسم المنتج')">
-
-اطلب الآن
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<section id="order" class="order">
+<!--========================
+CART SIDEBAR
+=========================-->
 
-<h2>
+<div id="cartSidebar" class="cart-sidebar">
 
-اطلب الآن
+    <div class="cart-header">
 
-</h2>
+        <h2>
 
-<form id="orderForm">
+            سلة المشتريات
 
-<input
-type="text"
-id="name"
-placeholder="الاسم الكامل"
-required>
+        </h2>
 
-<input
-type="tel"
-id="phone"
-placeholder="رقم الهاتف"
-required>
+        <button id="closeCart">
 
-<input
-type="text"
-id="city"
-placeholder="المدينة"
-required>
+            <i class="fa-solid fa-xmark"></i>
 
-<input
-type="text"
-id="address"
-placeholder="العنوان"
-required>
+        </button>
 
-<input
-type="text"
-id="product"
-placeholder="المنتج"
-readonly>
+    </div>
 
-<input
-type="number"
-id="quantity"
-value="1"
-min="1">
+    <div id="cartItems" class="cart-items">
 
-<button
-type="submit">
+    </div>
 
-تأكيد الطلب عبر واتساب
+    <div class="cart-footer">
 
-</button>
+        <div class="total">
 
-</form>
+            <span>
+
+                المجموع
+
+            </span>
+
+            <strong id="cartTotal">
+
+                0 DH
+
+            </strong>
+
+        </div>
+
+        <button id="checkoutBtn" class="checkout-btn">
+
+            متابعة الطلب
+
+        </button>
+
+    </div>
+<!--========================
+CHECKOUT
+=========================-->
+
+<section id="checkout" class="checkout">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>إتمام الطلب</span>
+
+            <h2>بيانات الزبون</h2>
+
+            <p>
+                أدخل معلوماتك وسيتم إرسال الطلب مباشرة عبر واتساب.
+            </p>
+
+        </div>
+
+        <form id="checkoutForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>الاسم الكامل</label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="الاسم الكامل"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>رقم الهاتف</label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="06XXXXXXXX"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>المدينة</label>
+
+                    <input
+                        type="text"
+                        id="customerCity"
+                        placeholder="المدينة"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>العنوان</label>
+
+                    <input
+                        type="text"
+                        id="customerAddress"
+                        placeholder="العنوان الكامل"
+                        required>
+
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="checkout-button">
+
+                <i class="fab fa-whatsapp"></i>
+
+                إرسال الطلب عبر واتساب
+
+            </button>
+
+        </form>
+
+    </div>
 
 </section>
 
-<section id="reviews" class="reviews">
+<!--========================
+ABOUT
+=========================-->
 
-<h2>
+<section id="about" class="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <img
+                src="images/about.jpg"
+                alt="Nabra">
+
+        </div>
+
+        <div>
+
+            <span class="mini-title">
+
+                من نحن
+
+            </span>
+
+            <h2>
+
+                Nabra Cosmetiques
+
+            </h2>
+
+            <p>
+
+                متجر متخصص في مستحضرات التجميل والعناية بالبشرة.
+
+                نقدم منتجات مختارة بعناية
+                مع جودة عالية وأسعار مناسبة.
+
+            </p>
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    منتجات أصلية
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    توصيل سريع
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    الدفع عند الاستلام
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    خدمة عملاء متميزة
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--========================
+REVIEWS
+=========================-->
+
+<section
+id="reviews"
+class="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
 
 آراء العملاء
 
+</span>
+
+<h2>
+
+ماذا يقول عملاؤنا
+
 </h2>
 
-<div class="review-box">
+</div>
+
+<div class="reviews-grid">
+
+<div class="review">
 
 ★★★★★
 
 <p>
 
-منتجات رائعة وخدمة ممتازة.
+وصلني الطلب بسرعة والمنتج ممتاز.
 
 </p>
 
+<strong>
+
+سارة
+
+</strong>
+
 </div>
 
-<div class="review-box">
+<div class="review">
 
 ★★★★★
 
@@ -352,52 +522,145 @@ type="submit">
 
 </p>
 
+<strong>
+
+فاطمة
+
+</strong>
+
 </div>
 
-<div class="review-box">
+<div class="review">
 
 ★★★★★
 
 <p>
 
-التوصيل سريع والجودة ممتازة.
+سأطلب مرة أخرى بالتأكيد.
 
 </p>
+
+<strong>
+
+إيمان
+
+</strong>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<footer id="contact">
+<!--========================
+FAQ
+=========================-->
 
-<img src="images/logo.png">
+<section class="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+الأسئلة الشائعة
+
+</h2>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+هل الدفع عند الاستلام متوفر؟
+
+</h3>
 
 <p>
 
-+212 635 633060
+نعم، يتوفر الدفع عند الاستلام في أغلب المدن المغربية.
 
 </p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+كم مدة التوصيل؟
+
+</h3>
 
 <p>
 
-جميع الحقوق محفوظة © 2026
+من 24 إلى 72 ساعة حسب المدينة.
 
 </p>
 
-</footer>
+</div>
 
-<a class="whatsapp"
+<div class="faq-item">
 
-href="https://wa.me/212635633060"
+<h3>
 
-target="_blank">
+هل المنتجات أصلية؟
 
-<i class="fab fa-whatsapp"></i>
+</h3>
 
-</a>
+<p>
 
-<script src="script.js"></script>
+جميع المنتجات أصلية ومضمونة.
 
-</body>
+</p>
 
-</html>
+</div>
+
+</div>
+
+</section>
+
+<!--========================
+NEWSLETTER
+=========================-->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+احصل على أحدث العروض
+
+</h2>
+
+<p>
+
+اشترك ليصلك كل جديد.
+
+</p>
+
+<div class="newsletter-box">
+
+<input
+type="email"
+placeholder="البريد الإلكتروني">
+
+<button>
+
+اشتراك
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+</div>
+
+<div id="overlay" class="overlay"></div>
