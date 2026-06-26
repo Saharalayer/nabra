@@ -1,102 +1,257 @@
-// =====================================
+// ======================================
 // Nabra Cosmetiques
 // script.js
-// =====================================
+// Version 2.0
+// ======================================
 
 // رقم الواتساب
-const whatsappNumber = "212635633060";
+const WHATSAPP_NUMBER = "212635633060";
 
-// تعبئة اسم المنتج داخل النموذج
-function orderProduct(productName) {
+// عناصر الصفحة
+const cartBtn = document.getElementById("cartButton");
+const cart = document.getElementById("cart");
+const overlay = document.getElementById("overlay");
+const closeCart = document.getElementById("closeCart");
+const checkoutBtn = document.getElementById("checkoutButton");
+const loader = document.getElementById("loader");
 
-    document.getElementById("product").value = productName;
+//=========================
+// إخفاء شاشة التحميل
+//=========================
 
-    document.getElementById("order").scrollIntoView({
-        behavior: "smooth"
+window.addEventListener("load", () => {
+
+    if (loader) {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 500);
+
+    }
+
+});
+
+//=========================
+// فتح السلة
+//=========================
+
+if (cartBtn) {
+
+    cartBtn.addEventListener("click", () => {
+
+        cart.classList.add("active");
+
+        overlay.classList.add("active");
+
     });
 
 }
 
-// إرسال الطلب إلى واتساب
-document.getElementById("orderForm").addEventListener("submit", function(e){
+//=========================
+// إغلاق السلة
+//=========================
+
+if (closeCart) {
+
+    closeCart.addEventListener("click", closeSidebar);
+
+}
+
+if (overlay) {
+
+    overlay.addEventListener("click", closeSidebar);
+
+}
+
+function closeSidebar() {
+
+    cart.classList.remove("active");
+
+    overlay.classList.remove("active");
+
+}
+
+//=========================
+// متابعة الطلب
+//=========================
+
+if (checkoutBtn) {
+
+    checkoutBtn.addEventListener("click", () => {
+
+        closeSidebar();
+
+        document.getElementById("checkout")
+            .scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+    });
+
+}
+
+//=========================
+// إرسال الطلب
+//=========================
+
+const form = document.getElementById("checkoutForm");
+
+if (form) {
+
+    form.addEventListener("submit", sendOrder);
+
+}
+
+function sendOrder(e) {
 
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
+    const name =
+        document.getElementById("customerName").value.trim();
 
-    const phone = document.getElementById("phone").value.trim();
+    const phone =
+        document.getElementById("customerPhone").value.trim();
 
-    const city = document.getElementById("city").value.trim();
+    const city =
+        document.getElementById("customerCity").value.trim();
 
-    const address = document.getElementById("address").value.trim();
+    const address =
+        document.getElementById("customerAddress").value.trim();
 
-    const product = document.getElementById("product").value.trim();
+    if (!name || !phone || !city || !address) {
 
-    const quantity = document.getElementById("quantity").value;
-
-    if(
-        name==="" ||
-        phone==="" ||
-        city==="" ||
-        address==="" ||
-        product===""){
         alert("يرجى ملء جميع البيانات");
+
         return;
+
     }
 
-    const message =
+    if (cart.length === 0) {
 
-`🛍️ طلب جديد من الموقع
+        alert("السلة فارغة");
 
-👤 الاسم:
-${name}
+        return;
 
-📞 الهاتف:
-${phone}
+    }
 
-🏙️ المدينة:
-${city}
+    let message =
 
-📍 العنوان:
-${address}
+`🛍️ طلب جديد
 
-🧴 المنتج:
-${product}
+👤 الاسم : ${name}
 
-🔢 الكمية:
-${quantity}
+📞 الهاتف : ${phone}
 
-شكراً لاختياركم
-Nabra Cosmetiques ❤️`;
+🏙️ المدينة : ${city}
+
+📍 العنوان : ${address}
+
+====================
+
+🛒 المنتجات
+
+`;
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+
+        message +=
+
+`${index + 1}- ${item.name}
+
+الكمية : ${item.quantity}
+
+السعر : ${item.price} DH
+
+--------------------
+
+`;
+
+        total += item.price * item.quantity;
+
+    });
+
+    message +=
+
+`💰 المجموع :
+
+${total} DH
+
+شكراً لاختياركم ❤️
+Nabra Cosmetiques`;
 
     const url =
-`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-    window.open(url,"_blank");
+    window.open(url, "_blank");
 
-});
+}
+//======================================
+// زر العودة للأعلى
+//======================================
 
-// ================================
-// ظهور العناصر عند التمرير
-// ================================
+const scrollBtn = document.getElementById("scrollTop");
 
-const observer = new IntersectionObserver((entries)=>{
+if (scrollBtn) {
 
-    entries.forEach(entry=>{
+    window.addEventListener("scroll", () => {
 
-        if(entry.isIntersecting){
+        if (window.scrollY > 400) {
 
-            entry.target.classList.add("show");
+            scrollBtn.classList.add("show");
+
+        } else {
+
+            scrollBtn.classList.remove("show");
 
         }
 
     });
 
-},{
-    threshold:0.15
+    scrollBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+//======================================
+// ظهور العناصر عند التمرير
+//======================================
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
 });
 
-document.querySelectorAll(".card,.feature,.review-box").forEach(el=>{
+document.querySelectorAll("section,.product-card,.review,.feature").forEach(el => {
 
     el.classList.add("hidden");
 
@@ -104,144 +259,196 @@ document.querySelectorAll(".card,.feature,.review-box").forEach(el=>{
 
 });
 
-// ================================
-// زر العودة للأعلى
-// ================================
+//======================================
+// القائمة المتجاوبة
+//======================================
 
-const topBtn=document.createElement("button");
+const menuButton = document.getElementById("menuButton");
 
-topBtn.innerHTML="↑";
+const nav = document.querySelector("nav");
 
-topBtn.id="topBtn";
+if (menuButton && nav) {
 
-document.body.appendChild(topBtn);
+    menuButton.addEventListener("click", () => {
 
-topBtn.style.position="fixed";
-topBtn.style.bottom="100px";
-topBtn.style.left="25px";
-topBtn.style.width="55px";
-topBtn.style.height="55px";
-topBtn.style.borderRadius="50%";
-topBtn.style.border="none";
-topBtn.style.background="#c9a86a";
-topBtn.style.color="#fff";
-topBtn.style.fontSize="22px";
-topBtn.style.cursor="pointer";
-topBtn.style.display="none";
-topBtn.style.zIndex="999";
+        nav.classList.toggle("active");
 
-window.addEventListener("scroll",()=>{
+    });
 
-    if(window.scrollY>400){
+}
 
-        topBtn.style.display="block";
+//======================================
+// إغلاق القائمة عند الضغط على رابط
+//======================================
 
-    }else{
+document.querySelectorAll("nav a").forEach(link => {
 
-        topBtn.style.display="none";
+    link.addEventListener("click", () => {
+
+        if (nav) {
+
+            nav.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+//======================================
+// تمرير سلس
+//======================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+//======================================
+// تغيير لون الهيدر
+//======================================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (!header) return;
+
+    if (window.scrollY > 80) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
 
     }
 
 });
 
-topBtn.onclick=()=>{
+//======================================
+// عداد المنتجات داخل السلة
+//======================================
 
-    window.scrollTo({
+function updateCartCounter() {
 
-        top:0,
+    const counter = document.getElementById("cartCounter");
 
-        behavior:"smooth"
+    if (!counter) return;
 
-    });
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    counter.textContent = total;
+
+}
+
+const oldRenderCart = renderCart;
+
+renderCart = function () {
+
+    oldRenderCart();
+
+    updateCartCounter();
 
 };
 
-// ================================
-// تأثير الهيدر عند النزول
-// ================================
+//======================================
+// رسالة نجاح
+//======================================
 
-const header=document.querySelector("header");
+function showToast(message) {
 
-window.addEventListener("scroll",()=>{
+    const toast = document.createElement("div");
 
-    if(window.scrollY>60){
+    toast.className = "toast";
 
-        header.style.background="#1d1b3a";
+    toast.innerHTML = message;
 
-        header.style.padding="5px 0";
+    document.body.appendChild(toast);
 
-    }else{
+    setTimeout(() => {
 
-        header.style.background="rgba(29,27,58,.92)";
+        toast.classList.add("show");
 
-        header.style.padding="0";
+    }, 100);
 
-    }
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 400);
+
+    }, 2500);
+
+}
+
+//======================================
+// تحسين إضافة المنتج
+//======================================
+
+const originalAdd = addToCart;
+
+addToCart = function (id) {
+
+    originalAdd(id);
+
+    const product = products.find(p => p.id === id);
+
+    showToast("✅ تمت إضافة " + product.name + " إلى السلة");
+
+};
+
+//======================================
+// Lazy Loading
+//======================================
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.loading = "lazy";
 
 });
 
-// ================================
-// تأثير ظهور العناصر
-// ================================
+//======================================
+// حفظ السلة تلقائياً
+//======================================
 
-const style=document.createElement("style");
+window.addEventListener("beforeunload", () => {
 
-style.innerHTML=`
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(50px);
-
-transition:1s;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-`;
-
-document.head.appendChild(style);
-
-// ================================
-// تغيير لون الزر عند الضغط
-// ================================
-
-document.querySelectorAll(".card button").forEach(btn=>{
-
-    btn.addEventListener("mousedown",()=>{
-
-        btn.style.transform="scale(.95)";
-
-    });
-
-    btn.addEventListener("mouseup",()=>{
-
-        btn.style.transform="scale(1)";
-
-    });
+    localStorage.setItem("cart", JSON.stringify(cart));
 
 });
 
-// ================================
-// السنة الحالية في الفوتر (اختياري)
-// ================================
+//======================================
+// استرجاع السلة
+//======================================
 
-const footer=document.querySelector("footer");
+document.addEventListener("DOMContentLoaded", () => {
 
-if(footer){
+    renderProducts();
 
-    const year=document.createElement("p");
+    renderCart();
 
-    year.innerHTML="© "+new Date().getFullYear()+" Nabra Cosmetiques";
+    updateCartCounter();
 
-    footer.appendChild(year);
-
-}
+});
