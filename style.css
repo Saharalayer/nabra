@@ -1871,3 +1871,88 @@ background:var(--secondary);
 color:#fff;
 
 }
+/*==============================
+ABOUT SOCIAL MEDIA
+==============================*/
+
+.follow-title{
+
+margin-top:40px;
+
+margin-bottom:25px;
+
+font-size:22px;
+
+font-weight:600;
+
+color:var(--primary);
+
+}
+
+.social-links{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-bottom:20px;
+
+}
+
+.social-links a{
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+color:var(--secondary);
+
+border:2px solid var(--secondary);
+
+transition:.35s ease;
+
+background:#fff;
+
+}
+
+.social-links a:hover{
+
+background:var(--secondary);
+
+color:#fff;
+
+transform:translateY(-8px) scale(1.08);
+
+box-shadow:0 10px 25px rgba(199,166,106,.35);
+
+}
+
+.username{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:var(--secondary);
+
+letter-spacing:1px;
+
+margin-top:10px;
+
+}
