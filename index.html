@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nabra Cosmetiques | منتجات التجميل</title>
+
+<meta name="description"
+content="Nabra Cosmetiques منتجات تجميل وعناية أصلية مع إمكانية الطلب المباشر عبر الواتساب.">
+
+<meta name="keywords"
+content="Nabra, Cosmetiques, Cosmetics, Beauty, Maroc">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+<img src="images/logo.png">
+
+</div>
+
+<nav>
+
+<a href="#">الرئيسية</a>
+
+<a href="#products">المنتجات</a>
+
+<a href="#about">من نحن</a>
+
+<a href="#reviews">الآراء</a>
+
+<a href="#contact">تواصل معنا</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<h1>
+
+جمالك يبدأ من هنا
+
+</h1>
+
+<p>
+
+منتجات تجميل وعناية مختارة بعناية لتمنحك أفضل النتائج.
+
+</p>
+
+<div class="buttons">
+
+<a href="#products" class="btn">
+
+اكتشف المنتجات
+
+</a>
+
+<a href="#order" class="btn gold">
+
+اطلب الآن
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/hero.png">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="container">
+
+<div class="feature">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>منتجات أصلية</h3>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>توصيل سريع</h3>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>دعم متواصل</h3>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-tag"></i>
+
+<h3>أفضل الأسعار</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="products" class="products">
+
+<h2>
+
+منتجاتنا
+
+</h2>
+
+<div class="products-grid">
+
+<!-- Product 1 -->
+
+<div class="card">
+
+<img src="images/product1.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+<!-- Product 2 -->
+
+<div class="card">
+
+<img src="images/product2.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+<!-- Product 3 -->
+
+<div class="card">
+
+<img src="images/product3.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+<!-- Product 4 -->
+
+<div class="card">
+
+<img src="images/product4.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+<!-- Product 5 -->
+
+<div class="card">
+
+<img src="images/product5.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+<!-- Product 6 -->
+
+<div class="card">
+
+<img src="images/product6.jpg">
+
+<h3>اسم المنتج</h3>
+
+<p>199 DH</p>
+
+<button onclick="orderProduct('اسم المنتج')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="order" class="order">
+
+<h2>
+
+اطلب الآن
+
+</h2>
+
+<form id="orderForm">
+
+<input
+type="text"
+id="name"
+placeholder="الاسم الكامل"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="رقم الهاتف"
+required>
+
+<input
+type="text"
+id="city"
+placeholder="المدينة"
+required>
+
+<input
+type="text"
+id="address"
+placeholder="العنوان"
+required>
+
+<input
+type="text"
+id="product"
+placeholder="المنتج"
+readonly>
+
+<input
+type="number"
+id="quantity"
+value="1"
+min="1">
+
+<button
+type="submit">
+
+تأكيد الطلب عبر واتساب
+
+</button>
+
+</form>
+
+</section>
+
+<section id="reviews" class="reviews">
+
+<h2>
+
+آراء العملاء
+
+</h2>
+
+<div class="review-box">
+
+★★★★★
+
+<p>
+
+منتجات رائعة وخدمة ممتازة.
+
+</p>
+
+</div>
+
+<div class="review-box">
+
+★★★★★
+
+<p>
+
+أفضل متجر تعاملت معه.
+
+</p>
+
+</div>
+
+<div class="review-box">
+
+★★★★★
+
+<p>
+
+التوصيل سريع والجودة ممتازة.
+
+</p>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<img src="images/logo.png">
+
+<p>
+
++212 635 633060
+
+</p>
+
+<p>
+
+جميع الحقوق محفوظة © 2026
+
+</p>
+
+</footer>
+
+<a class="whatsapp"
+
+href="https://wa.me/212635633060"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
